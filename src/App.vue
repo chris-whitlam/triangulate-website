@@ -1,17 +1,20 @@
 <template>
   <Header />
-  <Hero />
+  <Body />
+  <Footer />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Header from "./components/Header.vue";
-import Hero from "./components/Hero.vue";
+import Body from "./components/Body.vue";
+import Footer from "./components/Footer.vue";
 
 @Options({
   components: {
     Header,
-    Hero,
+    Body,
+    Footer,
   },
 })
 export default class App extends Vue {}
@@ -22,8 +25,8 @@ export default class App extends Vue {}
 
 html,
 body {
-  margin: -0 !important;
-  padding: -0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   background-color: #d2d2d2;
 }
 
@@ -31,5 +34,7 @@ body {
   font-family: "Quantico", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 </style>
