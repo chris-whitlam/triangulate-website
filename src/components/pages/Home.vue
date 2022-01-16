@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Hero from "./Hero.vue";
-import Features from "./Features.vue";
+import Hero from "../Hero.vue";
+import Features from "../Features.vue";
 
 @Options({
   components: {
@@ -21,12 +21,12 @@ export default class Body extends Vue {}
 
 <style scoped>
 .main {
-  margin-top: 7rem;
+  margin-top: 6vh;
 }
 
 @media (min-width: 1226px) {
   .main {
-    margin-top: 10rem;
+    margin-top: 4%;
   }
 }
 </style>

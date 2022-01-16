@@ -1,7 +1,9 @@
 <template>
-  <section></section>
-  <section></section>
-  <section></section>
+  <div class="content">
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,6 +17,8 @@ export default class Footer extends Vue {}
 section {
   height: 70vh;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 section:nth-of-type(2n-1) {
@@ -24,5 +28,6 @@ section:nth-of-type(2n-1) {
 .content {
   height: 100%;
   width: 100%;
+  z-index: 10;
 }
 </style>

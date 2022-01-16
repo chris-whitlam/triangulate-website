@@ -1,6 +1,16 @@
 <template>
   <div class="container">
-    <img class="logo" alt="Triangulate logo" src="../assets/word-logo.png" />
+    <div class="triangles-container">
+      <Triangle class="triangle2" :rotation="-25" :color="'#0B2059'" />
+      <Triangle class="triangle3" :rotation="-10" :color="'#99ADE1'" />
+      <Triangle class="triangle4" :rotation="-20" :color="'#64A6E2'" />
+      <Triangle class="triangle5" :rotation="5" :color="'#37425C'" />
+      <Triangle class="triangle6" :rotation="30" :color="'#476F94'" />
+    </div>
+    <div class="logo-container">
+      <img class="logo" alt="Triangulate logo" src="../assets/word-logo.png" />
+      <Triangle class="triangle1" :rotation="40" />
+    </div>
     <div class="content">
       <div class="content-left">
         <h1>Puzzle your brain</h1>
@@ -24,9 +34,13 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { Triangle } from "../assets/triangle.svg";
+import Triangle from "./Triangle.vue";
 
-@Options({})
+@Options({
+  components: {
+    Triangle,
+  },
+})
 export default class Hero extends Vue {}
 </script>
 
@@ -34,6 +48,7 @@ export default class Hero extends Vue {}
 h1,
 h2 {
   margin-bottom: 0;
+  z-index: 10;
 }
 
 h1 {
@@ -48,21 +63,88 @@ h2 {
 }
 
 .container {
+  min-width: 100vw;
+  height: 100vw;
+}
+
+.triangles-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.triangle1 {
+  position: absolute;
+  top: -150%;
+  left: -12%;
+  z-index: 0;
+  width: 60%;
+  height: auto;
+}
+
+.triangle2 {
+  position: absolute;
+  z-index: 0;
+  top: 50vh;
+  right: -10vw;
+  width: min(80%, 800px);
+  height: auto;
+}
+
+.triangle3 {
+  position: absolute;
+  z-index: 0;
+  right: 0vw;
+  top: -15vh;
+  width: min(60%, 450px);
+  height: auto;
+}
+
+.triangle4 {
+  position: absolute;
+  z-index: 0;
+  right: -20vw;
+  top: 15vh;
+  width: min(70%, 400px);
+  height: auto;
+}
+
+.triangle5 {
+  position: absolute;
+  z-index: 0;
+  left: -10vw;
+  top: 30vh;
+  width: min(50%, 550px);
+  height: auto;
+}
+
+.triangle6 {
+  position: absolute;
+  z-index: 0;
+  right: 60vw;
+  top: 80vh;
+  width: min(45%, 600px);
+  height: auto;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 600px;
   height: 210vw;
   max-height: 1200px;
-  overflow: hidden;
-  padding: 0 3vw;
+  max-width: 100%;
+  padding: 8vh 0vw;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 5vw 0 5vw;
+  padding: 0vh 5vw 0 5vw;
 }
 
 .content-left {
@@ -79,18 +161,30 @@ h2 {
   align-items: center;
 }
 
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
-  width: min(95%, 850px);
+  position: inherit;
+  z-index: 10;
+  width: min(90%, 850px);
   height: auto;
+  overflow: hidden;
 }
 
 .google-play-download {
   width: min(70%, 500px);
   height: auto;
   margin-top: 20px;
+  z-index: 10;
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .hero-image {
+  z-index: 10;
   width: min(25rem, 90%);
   height: auto;
   margin-top: 60px;
@@ -113,6 +207,10 @@ h2 {
     margin-top: 60px;
   }
 
+  .logo-container {
+    position: block;
+  }
+
   .content-left {
     margin-top: 0;
     margin-bottom: 250px;
@@ -122,6 +220,29 @@ h2 {
   .content-right {
     margin-top: 0;
     margin-left: 50px;
+  }
+
+  .triangle3 {
+    width: 500px;
+  }
+
+  .triangle4 {
+    width: 400px;
+    top: 15vw;
+    right: -5vw;
+  }
+
+  .triangle5 {
+    width: 35vw;
+    top: 0 !important;
+    bottom: -5vw;
+    right: -5vw;
+  }
+
+  .triangle6 {
+    right: 60vw;
+    top: 50vh;
+    width: 40vw;
   }
 }
 </style>

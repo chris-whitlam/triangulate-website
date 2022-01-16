@@ -1,19 +1,19 @@
 <template>
   <Header />
-  <Body />
+  <Home />
   <Footer />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Header from "./components/Header.vue";
-import Body from "./components/Body.vue";
+import Home from "./components/pages/Home.vue";
 import Footer from "./components/Footer.vue";
 
 @Options({
   components: {
     Header,
-    Body,
+    Home,
     Footer,
   },
 })
@@ -28,6 +28,8 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   background-color: #d2d2d2;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 #app {

@@ -26,6 +26,7 @@ header {
   padding: 10px;
   display: flex;
   align-items: center;
+  z-index: 20;
 }
 
 nav {
