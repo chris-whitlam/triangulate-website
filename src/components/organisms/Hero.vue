@@ -26,11 +26,7 @@
         />
       </div>
       <div class="content-right">
-        <img
-          class="hero-image"
-          alt="Game Screenshot"
-          src="../../assets/test.png"
-        />
+        <Carousel class="carousel" :slides="slides" />
       </div>
     </div>
     <Wave />
@@ -38,17 +34,23 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { defineComponent } from "vue";
 import Triangle from "../atoms/Triangle.vue";
 import Wave from "../atoms/Wave.vue";
+import Carousel from "../molecules/Carousel.vue";
 
-@Options({
+export default defineComponent({
   components: {
     Triangle,
     Wave,
+    Carousel,
   },
-})
-export default class Hero extends Vue {}
+  data() {
+    return {
+      slides: ["level1-screenshot.png", "level1-screenshot.png"],
+    };
+  },
+});
 </script>
 
 <style scoped>
@@ -69,9 +71,77 @@ h2 {
   color: #242a40;
 }
 
+.carousel {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  width: min(70vw, 600px);
+  height: auto;
+  margin-top: 5vw;
+}
+
 .container {
   min-width: 100vw;
   height: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180vw;
+  max-height: 1500px;
+  max-width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0vh 5vw 0 5vw;
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  position: inherit;
+  z-index: 10;
+  width: min(90%, 850px);
+  height: auto;
+  overflow: hidden;
+}
+
+.google-play-download {
+  width: min(70%, 500px);
+  height: auto;
+  margin-top: 20px;
+  z-index: 10;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.hero-image {
+  z-index: 10;
+  width: min(25rem, 90%);
+  height: auto;
+  margin-top: 60px;
 }
 
 .triangles-container {
@@ -130,70 +200,10 @@ h2 {
 .triangle6 {
   position: absolute;
   z-index: 0;
-  right: 60vw;
-  top: 80vh;
+  top: max(100vw, 500px);
+  left: -50px;
   width: min(45%, 600px);
   height: auto;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 600px;
-  height: 210vw;
-  max-height: 1200px;
-  max-width: 100%;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0vh 5vw 0 5vw;
-}
-
-.content-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.content-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.logo {
-  position: inherit;
-  z-index: 10;
-  width: min(90%, 850px);
-  height: auto;
-  overflow: hidden;
-}
-
-.google-play-download {
-  width: min(70%, 500px);
-  height: auto;
-  margin-top: 20px;
-  z-index: 10;
-  filter: drop-shadow(2px 2px 2px black);
-}
-
-.hero-image {
-  z-index: 10;
-  width: min(25rem, 90%);
-  height: auto;
-  margin-top: 60px;
 }
 
 @media (min-width: 1226px) {
@@ -205,6 +215,13 @@ h2 {
     flex-direction: row;
     align-content: center;
     padding-top: 50px;
+  }
+
+  .carousel {
+    position: relative;
+    z-index: 10;
+    width: 450px;
+    margin-top: 2vw;
   }
 
   .hero-image {
@@ -234,12 +251,13 @@ h2 {
 
   .triangle4 {
     width: 400px;
-    top: 15vw;
-    right: -5vw;
+    top: 200px;
+    right: -1vw;
   }
 
   .triangle5 {
     width: 35vw;
+    max-width: 700px;
     top: 0 !important;
     bottom: -5vw;
     right: -5vw;

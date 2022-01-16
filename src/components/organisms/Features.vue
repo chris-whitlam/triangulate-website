@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="features">
     <section></section>
     <section></section>
     <section></section>
@@ -25,7 +25,7 @@ section:nth-of-type(2n-1) {
   background-color: #3a518a;
 }
 
-.content {
+.features {
   height: 100%;
   width: 100%;
   z-index: 10;
