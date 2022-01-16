@@ -8,7 +8,11 @@
       <Triangle class="triangle6" :rotation="30" :color="'#476F94'" />
     </div>
     <div class="logo-container">
-      <img class="logo" alt="Triangulate logo" src="../assets/word-logo.png" />
+      <img
+        class="logo"
+        alt="Triangulate logo"
+        src="../../assets/word-logo.png"
+      />
       <Triangle class="triangle1" :rotation="40" />
     </div>
     <div class="content">
@@ -18,27 +22,30 @@
         <img
           class="google-play-download"
           alt="Get it on Google Play"
-          src="../assets/google-play-download.png"
+          src="../../assets/google-play-download.png"
         />
       </div>
       <div class="content-right">
         <img
           class="hero-image"
           alt="Game Screenshot"
-          src="../assets/test.png"
+          src="../../assets/test.png"
         />
       </div>
     </div>
+    <Wave />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Triangle from "./Triangle.vue";
+import Triangle from "../atoms/Triangle.vue";
+import Wave from "../atoms/Wave.vue";
 
 @Options({
   components: {
     Triangle,
+    Wave,
   },
 })
 export default class Hero extends Vue {}
@@ -137,7 +144,6 @@ h2 {
   height: 210vw;
   max-height: 1200px;
   max-width: 100%;
-  padding: 8vh 0vw;
 }
 
 .content {

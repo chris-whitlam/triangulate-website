@@ -1,9 +1,11 @@
 <template>
   <header>
-    <img class="logo" alt="Triangulate logo" src="../assets/logo.png" />
+    <router-link class="logo" to="/">
+      <img class="logo" alt="Triangulate logo" src="../../assets/logo.png" />
+    </router-link>
     <nav>
-      <a>About</a>
-      <a>Contact</a>
+      <router-link class="nav-link" to="/about">About</router-link>
+      <router-link class="nav-link" to="/contact">Contact</router-link>
     </nav>
   </header>
 </template>
@@ -30,10 +32,16 @@ header {
 }
 
 nav {
-  color: white;
   margin-left: auto;
   text-align: right;
   font-size: 120%;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 a {
@@ -43,6 +51,10 @@ a {
 .logo {
   width: auto;
   height: 100%;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
 }
 
 @media (min-width: 1226px) {

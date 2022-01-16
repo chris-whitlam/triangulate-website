@@ -1,42 +1,45 @@
 <template>
   <Header />
-  <Home />
+  <div class="main">
+    <router-view />
+  </div>
   <Footer />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Header from "./components/Header.vue";
-import Home from "./components/pages/Home.vue";
-import Footer from "./components/Footer.vue";
+import Header from "./components/organisms/Header.vue";
+import Footer from "./components/organisms/Footer.vue";
 
 @Options({
   components: {
     Header,
-    Home,
     Footer,
   },
 })
 export default class App extends Vue {}
 </script>
 
-<style type="text/css">
-@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@300;400;500;700&family=Roboto:wght@300;400;900&display=swap");
-
+<style>
 html,
 body {
-  margin: 0 !important;
+  margin: 0 0 0 0 !important;
   padding: 0 !important;
-  background-color: #d2d2d2;
-  max-width: 100vw;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 #app {
-  font-family: "Quantico", sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0 !important;
-  padding: 0 !important;
+  text-align: center;
+  color: #2c3e50;
+  max-width: 100vw;
+}
+
+.main {
+  max-width: 100vw;
+  margin-top: 12vh;
 }
 </style>
