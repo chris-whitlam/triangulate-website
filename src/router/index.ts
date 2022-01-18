@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 import Contact from "../views/Contact.vue";
 import About from "../views/About.vue";
@@ -25,10 +25,15 @@ const routes: Array<RouteRecordRaw> = [
     name: "Privacy",
     component: Privacy,
   },
+  {
+    path: "/terms-of-use",
+    name: "Terms of Use",
+    component: Privacy,
+  },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

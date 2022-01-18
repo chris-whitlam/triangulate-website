@@ -27,10 +27,11 @@ body {
   padding: 0 !important;
   overflow-x: hidden;
   max-width: 100vw;
+  background-color: #e7e7e7;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Quantico", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

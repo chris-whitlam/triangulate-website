@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="hero">
     <div class="triangles-container">
       <Triangle class="triangle2" :rotation="-25" :color="'#0B2059'" />
       <Triangle class="triangle3" :rotation="-10" :color="'#99ADE1'" />
@@ -29,25 +29,28 @@
         <Carousel class="carousel" :slides="slides" />
       </div>
     </div>
-    <Wave />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Triangle from "../atoms/Triangle.vue";
-import Wave from "../atoms/Wave.vue";
 import Carousel from "../molecules/Carousel.vue";
 
 export default defineComponent({
   components: {
     Triangle,
-    Wave,
     Carousel,
   },
   data() {
     return {
-      slides: ["level1-screenshot.png", "level1-screenshot.png"],
+      slides: [
+        "main-menu.png",
+        "level-1.png",
+        "level-select.png",
+        "level-4.png",
+        "level-complete.png",
+      ],
     };
   },
 });
@@ -80,17 +83,12 @@ h2 {
   margin-top: 5vw;
 }
 
-.container {
-  min-width: 100vw;
-  height: 100vw;
-}
-
-.container {
+#hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 180vw;
-  max-height: 1500px;
+  height: 200vw;
+  max-height: 1700px;
   max-width: 100%;
 }
 
@@ -207,9 +205,9 @@ h2 {
 }
 
 @media (min-width: 1226px) {
-  .container {
+  #hero {
     height: 210vw;
-    max-height: 900px;
+    max-height: 950px;
   }
   .content {
     flex-direction: row;

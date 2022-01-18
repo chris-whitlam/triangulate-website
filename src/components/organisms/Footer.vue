@@ -2,34 +2,37 @@
   <footer>
     <a class="nav-link" href="https://www.chris-whitlam.dev">ChrisWhitlamDev</a>
     <nav>
-      <router-link class="nav-link" to="/privacy-policy">
-        Privacy Policy
-      </router-link>
+      <router-link class="nav-link" to="/privacy"> Privacy Policy </router-link>
       <router-link class="nav-link" to="/terms-of-use">
         Terms of Use
       </router-link>
     </nav>
+    <p>© Christopher Whitlam | {{ date }}</p>
   </footer>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { defineComponent } from "vue";
 
-@Options({})
-export default class Footer extends Vue {}
+export default defineComponent({
+  data() {
+    return {
+      date: new Date().getFullYear().toString(),
+    };
+  },
+});
 </script>
 
 <style scoped>
 footer {
   background-color: #242a40;
-  height: 8vh;
   max-width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 1vh 1vw;
+  padding: 2vh 1vw;
 }
 
 nav {

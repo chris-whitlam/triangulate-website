@@ -2,7 +2,7 @@
   <div>
     <img
       class="android-frame"
-      :src="`${require(`../../assets/img/android-frame2.png`)}`"
+      :src="`${require(`../../assets/img/android-frame.png`)}`"
       alt=""
     />
     <div class="carousel-slide-container">
