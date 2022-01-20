@@ -17,8 +17,8 @@
     </div>
     <div class="content">
       <div class="content-left">
-        <h1>Puzzle your brain</h1>
-        <h2>"An amazing game"</h2>
+        <h1>Because circles are pointless</h1>
+        <h2>Coming soon to Google Play</h2>
         <img
           class="google-play-download"
           alt="Get it on Google Play"
@@ -64,13 +64,13 @@ h2 {
 }
 
 h1 {
-  font-size: min(9vw, 60px);
+  font-size: min(7vw, 60px);
   color: #ccd322;
   text-shadow: 2px 2px #000000dc;
 }
 
 h2 {
-  font-size: min(6vw, 40px);
+  font-size: min(5vw, 40px);
   color: #242a40;
 }
 

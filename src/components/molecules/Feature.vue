@@ -60,12 +60,13 @@ export default defineComponent({
 <style scoped>
 h2 {
   line-height: 0em;
-  font-size: 2rem;
+  font-size: clamp(2em, 5vw, 4em);
+  padding-top: 1rem;
 }
 .feature {
-  width: 100%;
+  max-width: 100%;
   margin-top: -10px;
-  padding: 5% 0;
+  padding: 2% 2% 5%;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -90,6 +91,7 @@ h2 {
 
   .feature {
     font-size: 1.4rem;
+    padding: 2% 10% 5%;
   }
   .feature-content {
     justify-content: space-around;

@@ -32,7 +32,8 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 2vh 1vw;
+  padding: 2vh 10%;
+  text-align: center;
 }
 
 nav {

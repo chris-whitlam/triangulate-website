@@ -30,17 +30,28 @@ body {
   background-color: #e7e7e7;
 }
 
+h1 {
+  text-align: center;
+}
+
 #app {
   font-family: "Quantico", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   max-width: 100vw;
 }
 
 .main {
   max-width: 100vw;
-  margin-top: 12vh;
+  margin-top: 15vh;
+  min-height: 73vh;
+}
+
+@media (min-width: 700px) {
+  .main {
+    margin-top: 12vh;
+    min-height: 76vh;
+  }
 }
 </style>

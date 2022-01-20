@@ -150,6 +150,7 @@
 #terms {
   text-align: left;
   margin: 0 5% 10% 5%;
+  font-size: clamp(1em, 1.3vw, 1.5em);
 }
 
 @media (min-width: 1226px) {

@@ -1,5 +1,42 @@
 <template>
-  <h1>This is an Contact page</h1>
+  <div id="contact">
+    <h1>Contact Us</h1>
+    <form>
+      <InputField label="Email" name="email" type="email" />
+      <InputField label="Message" name="message" type="textbox" />
+
+      <Button>Send</Button>
+    </form>
+  </div>
 </template>
 
-<style scoped></style>
+<script lang="ts">
+import { defineComponent } from "vue";
+import { Button, InputField } from "@/components/atoms";
+
+export default defineComponent({
+  components: {
+    Button,
+    InputField,
+  },
+});
+</script>
+
+<style scoped>
+#contact {
+  margin: 0 5% 10% 5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1226px) {
+  #contact {
+    text-align: left;
+    margin: 0 20% 5% 20%;
+    max-width: 80%;
+  }
+}
+</style>

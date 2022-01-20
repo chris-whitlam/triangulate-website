@@ -4,15 +4,14 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import { defineComponent } from "vue";
 import Hero from "../components/organisms/Hero.vue";
 import Features from "../components/organisms/Features.vue";
 
-@Options({
+export default defineComponent({
   components: {
     Hero,
     Features,
   },
-})
-export default class Home extends Vue {}
+});
 </script>
