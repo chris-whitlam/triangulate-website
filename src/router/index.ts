@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Contact from "../views/Contact.vue";
 import About from "../views/About.vue";
 import Privacy from "../views/Privacy.vue";
+import Terms from "../views/Terms.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,9 +27,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Privacy,
   },
   {
-    path: "/terms-of-use",
-    name: "Terms of Use",
-    component: Privacy,
+    path: "/terms",
+    name: "Terms and Conditions",
+    component: Terms,
   },
 ];
 

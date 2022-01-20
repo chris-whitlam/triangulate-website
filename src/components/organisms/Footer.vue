@@ -3,11 +3,11 @@
     <a class="nav-link" href="https://www.chris-whitlam.dev">ChrisWhitlamDev</a>
     <nav>
       <router-link class="nav-link" to="/privacy"> Privacy Policy </router-link>
-      <router-link class="nav-link" to="/terms-of-use">
-        Terms of Use
+      <router-link class="nav-link" to="/terms">
+        Terms &amp; Conditions
       </router-link>
     </nav>
-    <p>© Christopher Whitlam | {{ date }}</p>
+    <p>© Christopher Whitlam (ChrisWhitlamDev) | {{ date }}</p>
   </footer>
 </template>
 

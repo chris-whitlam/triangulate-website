@@ -65,7 +65,7 @@ h2 {
 .feature {
   width: 100%;
   margin-top: -10px;
-  padding: 2% 0;
+  padding: 5% 0;
   background-color: var(--background-color);
   color: var(--text-color);
 }
