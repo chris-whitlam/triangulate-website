@@ -1,11 +1,19 @@
 <template>
-  <button><slot></slot></button>
+  <button :type="type"><slot></slot></button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
-export default defineComponent({});
+export default defineComponent({
+  props: {
+    type: {
+      type: String as PropType<"button" | "submit" | "reset" | undefined>,
+      required: false,
+      default: "button",
+    },
+  },
+});
 </script>
 
 <style scoped>

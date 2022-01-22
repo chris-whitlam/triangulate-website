@@ -8,18 +8,17 @@
       >
     </p>
     <p>Or if you prefer you can use the form below:</p>
-    <form>
+    <form name="contact" method="POST" data-netlify="true">
       <InputField label="Email" name="email" type="email" />
-      <InputField label="Message" name="message" type="textbox" />
-
-      <Button>Send</Button>
+      <InputField label="Message" name="message" type="textarea" />
+      <Button type="submit">Send</Button>
     </form>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Button, InputField } from "@/components/atoms";
+import { Button, InputField } from "../components/atoms";
 
 export default defineComponent({
   components: {
