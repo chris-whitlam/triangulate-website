@@ -130,7 +130,7 @@ h2 {
 .google-play-download {
   width: min(70%, 500px);
   height: auto;
-  margin-top: 20px;
+  margin-top: 0px;
   z-index: 10;
   filter: drop-shadow(2px 2px 2px black);
 }

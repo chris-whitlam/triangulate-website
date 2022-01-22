@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div id="faq">
     <h1>Frequently Asked Questions</h1>
     <p><strong>1. Is Triangulate free?</strong></p>
     <p>Yes, Triangulate is totally and utterly free!</p>
@@ -40,15 +40,18 @@ export default defineComponent({});
 </script>
 
 <style scoped>
-#contact {
-  margin: 0 5% 0% 5%;
+#faq {
+  text-align: left;
+  margin: 0 5% 10% 5%;
+  padding-bottom: 5%;
   font-size: clamp(1em, 1.3vw, 1.5em);
 }
 
 @media (min-width: 1226px) {
-  #contact {
+  #faq {
     text-align: left;
     margin: 0 20% 5% 20%;
+    padding-bottom: 1%;
     max-width: 80%;
   }
 }

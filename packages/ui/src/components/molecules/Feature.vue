@@ -59,10 +59,12 @@ export default defineComponent({
 
 <style scoped>
 h2 {
-  line-height: 0em;
+  line-height: 1em;
   font-size: clamp(2em, 5vw, 4em);
+  text-overflow: unset;
   padding-top: 1rem;
 }
+
 .feature {
   max-width: 100%;
   margin-top: -10px;

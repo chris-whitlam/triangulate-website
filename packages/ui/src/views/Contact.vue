@@ -1,6 +1,13 @@
 <template>
   <div id="contact">
-    <h1>Contact Us</h1>
+    <h1>Contact</h1>
+    <p>
+      You can contact me via email at:
+      <a href="mailto:chris.whitlam.dev@gmail.com"
+        >chris.whitlam.dev@gmail.com</a
+      >
+    </p>
+    <p>Or if you prefer you can use the form below:</p>
     <form>
       <InputField label="Email" name="email" type="email" />
       <InputField label="Message" name="message" type="textbox" />

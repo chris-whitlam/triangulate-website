@@ -39,7 +39,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 10px 20px;
+  padding: 10px 3%;
   display: flex;
   align-items: center;
   z-index: 20;

@@ -138,10 +138,10 @@
       you of any changes by posting the new Terms and Conditions on this page.
     </p>
     <p>These terms and conditions are effective as of 2022-01-09</p>
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <p>
       If you have any questions or suggestions about my Terms and Conditions, do
-      not hesitate to contact me at chris.whitlam.dev@gmail.com.
+      not hesitate to <router-link to="/contact">contact me</router-link>.
     </p>
   </div>
 </template>

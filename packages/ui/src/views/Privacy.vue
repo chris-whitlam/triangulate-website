@@ -20,17 +20,22 @@
     </p>
     <p>
       The terms used in this Privacy Policy have the same meanings as in our
-      Terms and Conditions, which are accessible
-      <router-link class="nav-link" to="/terms-of-use">here</router-link> unless
-      otherwise defined in this Privacy Policy.
+      <router-link class="nav-link" to="/terms">
+        Terms and Conditions</router-link
+      >, unless otherwise defined in this Privacy Policy.
     </p>
     <h2>Information Collection and Use</h2>
     <p>
-      For a better experience, while using the Service, I may require you to
-      provide certain personally identifiable information, including but not
-      limited to your name (if it is part of your Google Play username). The
-      information that I request will be retained on your device and is not
-      collected by me in any way.
+      For a better experience, while using the Service (Triangulate), I may
+      require you to provide certain personally identifiable information,
+      including but not limited to your name (if it is part of your Google Play
+      username).The information that I request will be retained on your device
+      and is not collected by me in any way.
+    </p>
+    <p>
+      If you were to contact me via email, and provide personal information
+      including but not limited to your name and email, this information would
+      only be used to reply to your email and nothing more.
     </p>
     <div>
       <p>
@@ -160,10 +165,10 @@
       changes by posting the new Privacy Policy on this page.
     </p>
     <p>This policy is effective as of 2022-01-09</p>
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <p>
       If you have any questions or suggestions about my Privacy Policy, do not
-      hesitate to contact me at chris.whitlam.dev@gmail.com.
+      hesitate to <router-link to="/contact">contact me</router-link>.
     </p>
   </div>
 </template>
