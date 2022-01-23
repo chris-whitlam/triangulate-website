@@ -12,6 +12,12 @@ export default defineComponent({
       type: Object as PropType<ImageConfig>,
       required: true,
     },
+    height: {
+      type: String,
+    },
+    width: {
+      type: String,
+    },
   },
   computed: {
     srcSet() {
@@ -38,3 +44,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+</style>

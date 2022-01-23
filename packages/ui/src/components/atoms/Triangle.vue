@@ -1,12 +1,13 @@
 <template>
   <svg
+    ref="triangle"
     width="470"
     height="407"
     viewBox="0 0 470 470"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     class="triangle"
-    v-bind:style="style"
+    :style="style"
   >
     <g filter="url(#filter0_d_4_29)">
       <path d="M234.809 0L465.005 398.713H4.61159L234.809 0Z" :fill="color" />
@@ -52,7 +53,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { CSSProperties, defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   props: {
@@ -72,19 +73,46 @@ export default defineComponent({
       return {
         "--start-rotation": `${this.rotation}deg`,
         "--end-rotation": `${this.rotation + 360}deg`,
-      };
+      } as CSSProperties;
     },
+  },
+  setup() {
+    const triangle = ref();
+
+    onMounted(() => {
+      if (!triangle.value) {
+        return;
+      }
+      triangle.value.addEventListener("mouseover", () =>
+        triangle.value.classList.add("animated")
+      );
+      triangle.value.addEventListener("animationend", () =>
+        triangle.value.classList.remove("animated")
+      );
+    });
+
+    return {
+      triangle,
+    };
   },
 });
 </script>
 
 <style scoped>
 .triangle {
-  transition: transform 0.7s ease-in-out;
   transform: rotate(var(--start-rotation));
 }
 
-.triangle:hover {
-  transform: rotate(var(--end-rotation));
+.triangle.animated {
+  animation: spin 1s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(var(--start-rotation));
+  }
+  100% {
+    transform: rotate(var(--end-rotation));
+  }
 }
 </style>
