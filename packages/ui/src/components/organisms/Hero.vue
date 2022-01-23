@@ -45,11 +45,26 @@ export default defineComponent({
   data() {
     return {
       slides: [
-        "main-menu.png",
-        "level-1.png",
-        "level-select.png",
-        "level-4.png",
-        "level-complete.png",
+        {
+          name: "main-menu",
+          sizes: ["200", "431", "615", "769", "905", "1027", "1080"],
+        },
+        {
+          name: "level-1",
+          sizes: ["200", "485", "686", "875", "1029", "1080"],
+        },
+        {
+          name: "level-select",
+          sizes: ["200", "459", "676", "823", "955", "1080"],
+        },
+        {
+          name: "level-4",
+          sizes: ["200", "415", "594", "735", "884", "986", "1080"],
+        },
+        {
+          name: "level-complete",
+          sizes: ["200", "437", "617", "776", "895", "1012", "1080"],
+        },
       ],
     };
   },

@@ -2,36 +2,42 @@
   <div>
     <img
       class="android-frame"
-      :src="`${require(`../../assets/img/android-frame.png`)}`"
+      sizes="(max-width: 1112px) 70vw, 1112px"
+      srcset="
+        ../../assets/img/android-frame/android-frame_200.png   200w,
+        ../../assets/img/android-frame/android-frame_445.png   445w,
+        ../../assets/img/android-frame/android-frame_611.png   611w,
+        ../../assets/img/android-frame/android-frame_720.png   720w,
+        ../../assets/img/android-frame/android-frame_944.png   944w,
+        ../../assets/img/android-frame/android-frame_1043.png 1043w,
+        ../../assets/img/android-frame/android-frame_1112.png 1112w
+      "
+      src="../../assets/img/android-frame/android-frame_1112.png"
       alt=""
     />
+
     <div class="carousel-slide-container">
       <CarouselSlide
         class="carousel-slide"
         v-for="(slide, index) in slides"
-        :key="slide"
+        :key="slide.name"
         :index="index"
         :visibleSlide="visibleSlide"
-      >
-        <img
-          class="slide-img"
-          :src="`${require(`../../assets/img/${slide}`)}`"
-          alt=""
-        />
-      </CarouselSlide>
+        :slide="slide"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import CarouselSlide from "../atoms/CarouselSlide.vue";
+import CarouselSlide, { Slide } from "../atoms/CarouselSlide.vue";
 
 export default defineComponent({
   props: {
     slides: {
       required: true,
-      type: Array as PropType<string[]>,
+      type: Array as PropType<Slide[]>,
     },
     autoPlay: {
       required: false,
@@ -81,10 +87,5 @@ export default defineComponent({
   width: 98%;
   top: 4%;
   left: 1%;
-}
-
-.slide-img {
-  width: 100%;
-  height: auto;
 }
 </style>
