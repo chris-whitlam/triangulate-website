@@ -8,21 +8,16 @@
       <Triangle class="triangle6" :rotation="30" :color="'#476F94'" />
     </div>
     <div class="logo-container">
-      <img
-        class="logo"
-        alt="Triangulate logo"
-        src="../../assets/word-logo.png"
-      />
+      <Image class="logo" :image="images.wordLogo" />
       <Triangle class="triangle1" :rotation="40" />
     </div>
     <div class="content">
       <div class="content-left">
         <h1>Because circles are pointless</h1>
         <h2>Coming soon to Google Play</h2>
-        <img
+        <Image
           class="google-play-download"
-          alt="Get it on Google Play"
-          src="../../assets/google-play-download.png"
+          :image="images.googlePlayDownload"
         />
       </div>
       <div class="content-right">
@@ -34,37 +29,25 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Triangle from "../atoms/Triangle.vue";
+import { Triangle, Image } from "../atoms";
 import Carousel from "../molecules/Carousel.vue";
+import images from "../../assets/img/images";
 
 export default defineComponent({
   components: {
     Triangle,
     Carousel,
+    Image,
   },
   data() {
     return {
+      images,
       slides: [
-        {
-          name: "main-menu",
-          sizes: ["200", "431", "615", "769", "905", "1027", "1080"],
-        },
-        {
-          name: "level-1",
-          sizes: ["200", "485", "686", "875", "1029", "1080"],
-        },
-        {
-          name: "level-select",
-          sizes: ["200", "459", "676", "823", "955", "1080"],
-        },
-        {
-          name: "level-4",
-          sizes: ["200", "415", "594", "735", "884", "986", "1080"],
-        },
-        {
-          name: "level-complete",
-          sizes: ["200", "437", "617", "776", "895", "1012", "1080"],
-        },
+        images.mainMenu,
+        images.level1,
+        images.levelSelect,
+        images.level4,
+        images.levelComplete,
       ],
     };
   },

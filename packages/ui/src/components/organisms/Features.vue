@@ -11,7 +11,7 @@
           Can you get the longest streak?
         </p>
       </div>
-      <img src="../../assets/img/daily-challenge.png" />
+      <Image :image="images.dailyChallenge" />
     </Feature>
 
     <Feature title="Global Leaderboards" variant="secondary">
@@ -25,9 +25,9 @@
           and you'll be at the top of the leaderboard too!
         </p>
       </div>
-      <img src="../../assets/img/leaderboard.png" />
+      <Image :image="images.leaderboard" />
     </Feature>
-    <Feature title="Over 100 Levels">
+    <Feature title="Levels">
       <div class="feature-description">
         <p>
           Plenty of hand crafted levels to challenge your brain. Plenty of
@@ -43,7 +43,7 @@
           </li>
         </ul>
       </div>
-      <img src="../../assets/img/level-3.png" />
+      <Image :image="images.level3" />
     </Feature>
   </div>
 </template>
@@ -51,10 +51,18 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { Feature } from "../molecules";
+import { Image } from "../atoms";
+import images from "../../assets/img/images";
 
 export default defineComponent({
   components: {
     Feature,
+    Image,
+  },
+  data() {
+    return {
+      images,
+    };
   },
 });
 </script>

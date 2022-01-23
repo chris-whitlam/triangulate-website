@@ -1,24 +1,15 @@
 <template>
   <transition name="left">
     <div v-show="visibleSlide === index" class="carousel-slide">
-      <img
-        class="slide-img"
-        :sizes="sizes"
-        :srcset="srcSet"
-        :src="src"
-        alt=""
-      />
+      <Image className="slide-img" :image="image" />
     </div>
   </transition>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-
-export interface Slide {
-  name: string;
-  sizes: Array<string>;
-}
+import Image from "./Image.vue";
+import { ImageConfig } from "../../assets/img/images";
 
 export default defineComponent({
   props: {
@@ -28,31 +19,13 @@ export default defineComponent({
     index: {
       type: Number,
     },
-    slide: {
-      type: Object as PropType<Slide>,
+    image: {
+      type: Object as PropType<ImageConfig>,
       required: true,
     },
   },
-  computed: {
-    srcSet() {
-      return this.slide.sizes.reduce(
-        (acc: string, size: string, index: number) =>
-          `${acc} ${require(`../../assets/img/${this.slide.name}/${this.slide.name}_${size}.png`)} ${size}w${
-            index == this.slide.sizes.length - 1 ? "" : ","
-          }`,
-        ""
-      );
-    },
-    src() {
-      return `${require(`../../assets/img/${this.slide.name}/${
-        this.slide.name
-      }_${this.slide.sizes[this.slide.sizes.length - 1]}.png`)}`;
-    },
-    sizes() {
-      return `(max-width: ${
-        this.slide.sizes[this.slide.sizes.length - 1]
-      }px) 100vw, ${this.slide.sizes[this.slide.sizes.length - 1]}px`;
-    },
+  components: {
+    Image,
   },
 });
 </script>

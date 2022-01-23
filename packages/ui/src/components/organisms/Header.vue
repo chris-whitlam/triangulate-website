@@ -1,7 +1,7 @@
 <template>
   <header>
     <router-link class="logo" to="/">
-      <img class="logo" alt="Triangulate logo" src="../../assets/logo.png" />
+      <Image class="logo" :image="images.logo" />
     </router-link>
     <nav>
       <router-link class="nav-link" to="/">HOME</router-link>
@@ -19,11 +19,18 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Button } from "../atoms";
+import { Button, Image } from "../atoms";
+import images from "../../assets/img/images";
 
 export default defineComponent({
   components: {
     Button,
+    Image,
+  },
+  data() {
+    return {
+      images,
+    };
   },
 });
 </script>
