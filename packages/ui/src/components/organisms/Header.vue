@@ -54,6 +54,10 @@ header {
   justify-content: space-between;
 }
 
+.router-link-active {
+  color: #ccd322 !important;
+}
+
 #menu-button {
   height: 100%;
   width: 40px;

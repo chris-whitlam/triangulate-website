@@ -3,9 +3,11 @@
     <Slope v-if="variant === 'primary'" class="slope" />
     <SlopeUpsideDown v-if="variant === 'secondary'" class="slope" />
     <div class="feature" :style="featureStyle">
-      <h2>{{ title }}</h2>
-      <div class="feature-content" :style="featureContentStyle">
-        <slot></slot>
+      <div v-scrollAnimation :style="slideIn">
+        <h2>{{ title }}</h2>
+        <div class="feature-content" :style="featureContentStyle">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -53,6 +55,11 @@ export default defineComponent({
         "--flex-direction": this.variant === "primary" ? "row-reverse" : "row",
       } as StyleValue;
     },
+    slideIn() {
+      return {
+        "--slide-from": this.variant === "primary" ? "100%" : "-100%",
+      } as StyleValue;
+    },
   },
 });
 </script>
@@ -73,6 +80,17 @@ h2 {
   color: var(--text-color);
 }
 
+.before-enter {
+  opacity: 0;
+  transform: translateX(var(--slide-from));
+  transition: all 0.7s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 .slope {
   width: 100vw;
   height: auto;
@@ -84,6 +102,18 @@ h2 {
   justify-content: space-around;
   align-items: center;
   padding: 0 5% 5% 5%;
+}
+
+.slide-enter-from {
+  opacity: 0;
+}
+
+.slide-enter-to {
+  opacity: 1;
+}
+
+.slide-enter-active {
+  transition: all 2s ease;
 }
 
 @media (min-width: 1226px) {

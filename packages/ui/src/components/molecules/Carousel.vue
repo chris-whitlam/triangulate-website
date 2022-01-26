@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-bind:class="show ? 'show' : 'hide'">
     <Image class="android-frame" :image="images.androidFrame" />
     <div class="carousel-slide-container">
       <CarouselSlide
@@ -41,6 +41,7 @@ export default defineComponent({
     return {
       visibleSlide: 0,
       images,
+      show: false,
     };
   },
   methods: {
@@ -57,6 +58,10 @@ export default defineComponent({
     window.setInterval(() => {
       this.next();
     }, this.autoPlaySeconds * 1000);
+
+    window.setInterval(() => {
+      this.show = true;
+    }, 100);
   },
 });
 </script>
@@ -74,5 +79,14 @@ export default defineComponent({
   width: 98%;
   top: 4%;
   left: 1%;
+}
+
+.hide {
+  transform: translatey(150%);
+}
+
+.show {
+  transform: translateY(0px);
+  transition: all 0.5s ease-out;
 }
 </style>
