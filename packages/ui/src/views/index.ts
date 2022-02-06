@@ -1,6 +1,32 @@
-export { default as Contact } from "./Contact.vue";
-export { default as Home } from "./Home.vue";
-export { default as NotFound } from "./NotFound.vue";
-export { default as Privacy } from "./Privacy.vue";
-export { default as Terms } from "./Terms.vue";
-export { default as FAQ } from "./FAQ.vue";
+import { default as Loading } from "./Loading.vue";
+import { defineAsyncComponent } from "vue";
+
+export const Home = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "home" */ "./Home.vue"),
+  loadingComponent: Loading,
+});
+
+export const Contact = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "contact" */ "./Contact.vue"),
+  loadingComponent: Loading,
+});
+
+export const NotFound = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "not-found" */ "./NotFound.vue"),
+  loadingComponent: Loading,
+});
+
+export const Privacy = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "privacy" */ "./Privacy.vue"),
+  loadingComponent: Loading,
+});
+
+export const Terms = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "terms" */ "./Terms.vue"),
+  loadingComponent: Loading,
+});
+
+export const FAQ = defineAsyncComponent({
+  loader: () => import(/* webpackChunkName: "faq" */ "./FAQ.vue"),
+  loadingComponent: Loading,
+});

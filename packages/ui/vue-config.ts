@@ -1,5 +1,10 @@
+const CompressionPlugin = require("compression-webpack-plugin");
+
 module.exports = {
   chainWebpack: (config) => {
+    config.plugins.delete("prefetch");
+    config.plugin("CompressionPlugin").use(CompressionPlugin);
+
     const svgRule = config.module.rule("svg");
 
     svgRule.uses.clear();
