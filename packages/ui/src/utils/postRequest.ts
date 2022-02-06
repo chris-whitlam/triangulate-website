@@ -1,3 +1,10 @@
+export type APIResponse = {
+  data?: any;
+  error?: {
+    error: string;
+  };
+};
+
 const defaultOptions: Partial<Request> = {
   method: "POST",
   cache: "no-cache",
@@ -6,7 +13,7 @@ const defaultOptions: Partial<Request> = {
   }),
 };
 
-const postRequest: any = async (
+const postRequest = async (
   url: string,
   data: any = {},
   options: Partial<Request> = {}

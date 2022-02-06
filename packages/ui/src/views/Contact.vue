@@ -3,13 +3,19 @@
     <h1>Contact</h1>
     <p>
       You can contact us via email at:
-      <a href="mailto:chris.whitlam.dev@gmail.com"
-        >chris.whitlam.dev@gmail.com</a
-      >
+      <a href="mailto:contact@chriswhitlam.dev">contact@chriswhitlam.dev</a>
     </p>
     <p>Or, if you prefer, you can use the form below:</p>
     <form @submit.prevent="handleSubmit">
-      <label for="email"><strong>Email</strong></label>
+      <label for="name"><strong>Name</strong></label>
+      <input id="name" name="name" v-model="name" placeholder="John Smith" />
+      <span
+        v-for="error of v$.email.$errors"
+        :key="error.$uid"
+        class="error-message"
+        >{{ error.$message }}</span
+      >
+      <label class="form-item" for="email"><strong>Email</strong></label>
       <input
         id="email"
         name="email"
@@ -52,7 +58,7 @@ import { defineComponent } from "vue";
 import useVuelidate from "@vuelidate/core";
 import { required, email } from "@vuelidate/validators";
 import { Button } from "../components/atoms";
-import postRequest from "@/utils/postRequest";
+import postRequest from "../utils/postRequest";
 
 export default defineComponent({
   setup() {
@@ -63,6 +69,7 @@ export default defineComponent({
   },
   data() {
     return {
+      name: "",
       email: "",
       message: "",
       errorMessage: "",
@@ -71,6 +78,7 @@ export default defineComponent({
   },
   validations() {
     return {
+      name: { required },
       email: { required, email },
       message: { required },
     };
@@ -86,13 +94,15 @@ export default defineComponent({
       this.successMessage = "";
 
       const data = {
-        email: this.email,
-        message: this.message,
+        name: this.name.trim(),
+        email: this.email.trim(),
+        message: this.message.trim(),
       };
 
       try {
         await postRequest("/api/contact", data);
         this.successMessage = "Message sent!";
+        this.name = "";
         this.email = "";
         this.message = "";
         this.v$.$reset();

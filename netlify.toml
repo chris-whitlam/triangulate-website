@@ -1,5 +1,11 @@
+[build]
+  base = "."
+  publish = "packages/ui/dist"
+
+  command = "yarn build"
+
 [functions]
-  directory = "./functions"
+  directory = "packages/api/src/functions"
 
 [[redirects]]
   from = "/api/*"
