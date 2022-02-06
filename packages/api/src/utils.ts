@@ -1,7 +1,17 @@
-export const badRequest = (message: string) => errorResponse(message, 400);
+export const badRequest = (message: string) => {
+  console.log(message);
+  return errorResponse(message, 400);
+};
 
-export const internalServerError = (message = "Something went wrong") =>
-  errorResponse(message, 500);
+export const internalServerError = (message = "Something went wrong") => {
+  console.log(message);
+  return errorResponse(message, 500);
+};
+
+export const unprocessableEntity = (message = "Something went wrong") => {
+  console.log(message);
+  return errorResponse(message, 422);
+};
 
 const errorResponse = (
   message = "Something went wrong",

@@ -1,5 +1,10 @@
 import { Handler } from "@netlify/functions";
-import { successResponse, badRequest, internalServerError } from "../../utils";
+import {
+  successResponse,
+  badRequest,
+  internalServerError,
+  unprocessableEntity,
+} from "../../utils";
 import sendEmail from "../../services/sendEmail";
 import { getFeatureFlags } from "../../featureFlags";
 import Joi, { ValidationError } from "joi";
@@ -33,6 +38,7 @@ const validateContactFormInput = async (contactFormInput: ContactFormInput) => {
 };
 
 export const handler: Handler = async (event) => {
+  console.log("Received contact request");
   const { emailSendingEnabled } = getFeatureFlags();
 
   if (!event.body) return badRequest("Request body cannot be empty");
@@ -41,7 +47,7 @@ export const handler: Handler = async (event) => {
   try {
     body = JSON.parse(event.body);
   } catch {
-    return internalServerError();
+    return unprocessableEntity();
   }
 
   try {
@@ -54,10 +60,17 @@ export const handler: Handler = async (event) => {
   }
 
   if (!emailSendingEnabled) {
-    return internalServerError("Email sending is not available");
+    console.log("Email sending is disabled");
+    return internalServerError();
   }
 
-  await sendEmail(body);
+  try {
+    await sendEmail(body);
+  } catch (error) {
+    console.log(error);
+    return internalServerError();
+  }
 
+  console.log("Successfully sent email");
   return successResponse({ message: "Contact request sent" });
 };

@@ -1,6 +1,12 @@
 <template>
   <footer>
-    <a class="nav-link" href="https://www.chris-whitlam.dev">ChrisWhitlamDev</a>
+    <a
+      class="nav-link"
+      href="https://chriswhitlam.dev"
+      target="_blank"
+      rel="noreferrer noopener"
+      >ChrisWhitlamDev
+    </a>
     <nav>
       <router-link class="nav-link" to="/privacy"> Privacy Policy </router-link>
       <router-link class="nav-link" to="/terms">
