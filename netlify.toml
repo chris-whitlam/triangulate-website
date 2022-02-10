@@ -29,3 +29,8 @@
   for = "/img/*" # images
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[build.environment]
+  YARN_VERSION = "3.1.1"
+  YARN_ENABLE_GLOBAL_CACHE = "true"
+  YARN_GLOBAL_FOLDER = "/opt/buildhome/.yarn_cache"
