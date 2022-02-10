@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "types": [ "node", "webpack-env" ]
+    "types": [ "node", "webpack-env", "jest" ]
   },
   "exclude": [
     "node_modules",

@@ -9,14 +9,26 @@
   ],
   "scripts": {
     "lint": "tsc --noEmit && eslint \"**/*.ts*\" --fix",
-    "build": "yarn --cwd packages/ui install && yarn --cwd packages/ui build",
+    "test": "yarn test:api && yarn test:ui",
+    "test:api": "yarn ./packages/api test",
+    "test:ui": "yarn ./packages/ui test",
+    "build": "yarn ./packages/ui install && yarn ./packages/ui build",
     "start": "yarn build && netlify dev --offline",
     "dev:start": "yarn --cwd packages/ui start",
     "dev:build": "netlify build",
     "dev:invoke-email": "netlify functions:invoke contact --payload '{\"name\":\"test\", \"email\": \"test@test.com\", \"message\":\"testmessage\"}'"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@types/node": "^17.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-jest": "^26.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "netlify-cli": "^8.15.3",
-    "@types/node": "^17.0.14"
-  }
+    "prettier": "^2.2.1",
+    "typescript": "~4.1.5"
+  },
+  "packageManager": "yarn@3.1.1"
 }

@@ -1,5 +1,5 @@
 <template>
-  <button :type="type"><slot></slot></button>
+  <button :type="type" data-testid="button"><slot></slot></button>
 </template>
 
 <script lang="ts">
