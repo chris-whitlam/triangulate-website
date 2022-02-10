@@ -23,7 +23,7 @@ const errorResponse = (
   }),
 });
 
-export const successResponse = (data: any, statusCode = 200) => ({
+export const successResponse = (data: unknown, statusCode = 200) => ({
   statusCode,
   body: JSON.stringify(data),
 });

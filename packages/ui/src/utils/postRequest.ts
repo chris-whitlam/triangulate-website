@@ -1,5 +1,5 @@
 export type APIResponse = {
-  data?: any;
+  data?: unknown;
   error?: {
     error: string;
   };
@@ -15,7 +15,7 @@ const defaultOptions: Partial<Request> = {
 
 const postRequest = async (
   url: string,
-  data: any = {},
+  data: unknown = {},
   options: Partial<Request> = {}
 ) => {
   return new Promise((resolve, reject) => {

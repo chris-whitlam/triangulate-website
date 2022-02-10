@@ -1,7 +1,8 @@
-const CompressionPlugin = require("compression-webpack-plugin");
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import CompressionPlugin from "compression-webpack-plugin";
 
 module.exports = {
-  chainWebpack: (config) => {
+  chainWebpack: (config: any) => {
     config.plugins.delete("prefetch");
     config.plugin("CompressionPlugin").use(CompressionPlugin);
 

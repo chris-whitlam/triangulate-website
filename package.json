@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "tsc --noEmit && eslint \"**/*.ts*\" --fix",
     "build": "yarn --cwd packages/ui install && yarn --cwd packages/ui build",
     "start": "yarn build && netlify dev --offline",
     "dev:start": "yarn --cwd packages/ui start",
