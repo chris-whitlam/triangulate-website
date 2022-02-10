@@ -12,7 +12,7 @@ describe("Button", () => {
     });
 
     const button = getByTestId("button");
-
+    expect(button).toHaveTextContent(buttonText);
     expect(button).toBeInTheDocument();
   });
 });
