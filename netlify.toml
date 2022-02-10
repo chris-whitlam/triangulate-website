@@ -31,4 +31,6 @@
     Cache-Control = "public, max-age=604800"
 
 [build.environment]
-  YARN_VERSION = "3.0.1"
+  YARN_VERSION = "3.1.1"
+  NETLIFY_USE_YARN = true
+  YARN_WORKSPACES = true
