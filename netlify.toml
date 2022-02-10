@@ -32,5 +32,5 @@
 
 [build.environment]
   YARN_VERSION = "3.1.1"
-  NETLIFY_USE_YARN = true
-  YARN_WORKSPACES = true
+  NETLIFY_USE_YARN = "true"
+  YARN_WORKSPACES = "true"
