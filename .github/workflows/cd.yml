@@ -1,0 +1,46 @@
+name: CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build, lint and test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v2
+    - name: Install dependencies
+      uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: install 
+    - name: Linting
+      uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: lint 
+    - name: Jest Tests
+      uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: test
+
+  deploy: 
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
+      - name: Deploy
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: deploy
+    
