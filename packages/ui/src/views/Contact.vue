@@ -7,7 +7,9 @@
     </p>
     <p>Or, if you prefer, you can use the form below:</p>
     <form @submit.prevent="handleSubmit">
-      <label for="name"><strong>Name</strong></label>
+      <label for="name">
+        <strong>Name</strong>
+      </label>
       <input id="name" name="name" v-model="name" placeholder="John Smith" />
       <span
         v-for="error of v$.email.$errors"
@@ -15,7 +17,9 @@
         class="error-message"
         >{{ error.$message }}</span
       >
-      <label class="form-item" for="email"><strong>Email</strong></label>
+      <label class="form-item" for="email">
+        <strong>Email</strong>
+      </label>
       <input
         id="email"
         name="email"
@@ -28,7 +32,9 @@
         class="error-message"
         >{{ error.$message }}</span
       >
-      <label class="form-item" for="message"><strong>Message</strong></label>
+      <label class="form-item" for="message">
+        <strong>Message</strong>
+      </label>
       <textarea
         id="message"
         name="message"
@@ -106,6 +112,7 @@ export default defineComponent({
         this.email = "";
         this.message = "";
         this.v$.$reset();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         this.errorMessage = error.error;
       }
