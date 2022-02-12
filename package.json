@@ -12,7 +12,7 @@
     "test": "yarn test:api && yarn test:ui",
     "test:api": "yarn ./packages/api test",
     "test:ui": "yarn ./packages/ui test",
-    "build": "yarn ./packages/ui install && yarn ./packages/ui build",
+    "build": "yarn ./packages/ui build",
     "start": "yarn build && netlify dev --offline",
     "dev:build": "netlify build",
     "dev:invoke-email": "netlify functions:invoke contact --payload '{\"name\":\"test\", \"email\": \"test@test.com\", \"message\":\"testmessage\"}'",
