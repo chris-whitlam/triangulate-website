@@ -1,12 +1,12 @@
-name: CI
+name: CD
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
 
 jobs:
   build:
-    name: Build, Lint & Test
+    name: Build, lint and test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -25,3 +25,19 @@ jobs:
       uses: borales/actions-yarn@v2.3.0
       with:
         cmd: test
+
+  deploy: 
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
+      - name: Deploy
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: deploy
+    
