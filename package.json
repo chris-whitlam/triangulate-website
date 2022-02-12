@@ -14,10 +14,11 @@
     "test:ui": "yarn ./packages/ui test",
     "build": "yarn ./packages/ui build",
     "start": "yarn build && netlify dev --offline",
+    "prepare": "husky install",
+    "deploy": "netlify deploy --prod",
     "dev:build": "netlify build",
     "dev:invoke-email": "netlify functions:invoke contact --payload '{\"name\":\"test\", \"email\": \"test@test.com\", \"message\":\"testmessage\"}'",
-    "prepare": "husky install",
-    "deploy": "netlify deploy --prod"
+    "dev:branch-deploy": "netlify deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
