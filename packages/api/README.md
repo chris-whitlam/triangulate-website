@@ -1,6 +1,6 @@
 ![alt Triangulate Logo](https://triangulate-game.netlify.app/img/word-logo_1080.fa33f7ae.png)
-# Promotional Website - UI
-This is the UI package for the Triangulate website.
+# Promotional Website - API
+This is the API package for the Triangulate website. It is part of a larger monorepo. You can run this api via the root of the monorepo using `yarn start`. 
 
 ## Prerequisites
   - Node
@@ -8,7 +8,7 @@ This is the UI package for the Triangulate website.
 
 ## Setup
 1. Install dependencies with `yarn install`
-2. Run the site locally with `yarn start`. Note that this currently doesn't hot reload the webpage but does for the functions. To hot reload ui, run `yarn start:ui`
+2. Run the site and functions locally from the monorepo root using `yarn start`. 
 
 ## Useful Commands
 All commands must be prefixed with `yarn` e.g `yarn install`
@@ -18,5 +18,3 @@ All commands must be prefixed with `yarn` e.g `yarn install`
 | install | Installs all required dependencies |
 | lint | Runs linting checks against all files |
 | test | Runs jest tests against files |
-| start | Runs local instance of UI |
-| build | Builds and bundles files |
