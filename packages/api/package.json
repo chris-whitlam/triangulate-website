@@ -15,6 +15,7 @@
     "ts-jest": "^24.2.0"
   },
   "scripts": {
+    "lint": "tsc --noEmit && eslint \"**/*.ts\" --fix",
     "test": "JEST_JUNIT_OUTPUT_DIR=./artifacts jest --coverage"
   }
 }

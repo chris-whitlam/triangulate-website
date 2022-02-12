@@ -14,12 +14,12 @@ const defaultOptions: Partial<Request> = {
 };
 
 const postRequest = async (
-  url: string,
+  path: string,
   data: unknown = {},
   options: Partial<Request> = {}
 ) => {
   return new Promise((resolve, reject) => {
-    fetch(url, {
+    fetch(path, {
       ...defaultOptions,
       ...options,
       body: JSON.stringify(data),

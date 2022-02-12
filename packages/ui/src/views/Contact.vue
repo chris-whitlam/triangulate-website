@@ -100,7 +100,7 @@ export default defineComponent({
       };
 
       try {
-        await postRequest("/api/contact", data);
+        await postRequest("/contact", data);
         this.successMessage = "Message sent!";
         this.name = "";
         this.email = "";
