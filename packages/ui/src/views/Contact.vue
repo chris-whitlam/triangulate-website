@@ -112,6 +112,7 @@ export default defineComponent({
         this.email = "";
         this.message = "";
         this.v$.$reset();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         this.errorMessage = error.error;
       }
