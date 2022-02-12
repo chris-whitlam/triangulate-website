@@ -18,7 +18,7 @@
     "deploy": "netlify deploy --prod",
     "dev:build": "netlify build",
     "dev:invoke-email": "netlify functions:invoke contact --payload '{\"name\":\"test\", \"email\": \"test@test.com\", \"message\":\"testmessage\"}'",
-    "dev:branch-deploy": "netlify deploy"
+    "dev:branch-deploy": "netlify deploy --alias=$USER --open"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
