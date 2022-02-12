@@ -31,3 +31,5 @@ artifacts
 **/coverage
 
 tsconfig.tsbuildinfo
+
+junit.xml
