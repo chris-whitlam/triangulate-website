@@ -13,7 +13,7 @@
     </div>
     <div class="content">
       <div class="content-left">
-        <h1>Because squares are pointless</h1>
+        <h1>Because circles are pointless</h1>
         <h2>Coming soon to Google Play</h2>
         <Image
           class="google-play-download"
