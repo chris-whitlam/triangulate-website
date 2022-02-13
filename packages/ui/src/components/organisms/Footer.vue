@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer data-testid="footer">
     <a
       class="nav-link"
       href="https://chriswhitlam.dev"

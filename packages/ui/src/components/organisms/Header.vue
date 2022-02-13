@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header data-testid="header">
     <router-link class="logo" to="/">
       <Image class="logo" :image="images.logo" />
     </router-link>

@@ -7,10 +7,10 @@ module.exports = {
   extends: [
     "eslint:recommended",
   ],
-  "parserOptions": {
-    "ecmaVersion": 2015,
+  parserOptions: {
+    ecmaVersion: 6,
   },
-  "plugins": [
+  plugins: [
     "@typescript-eslint",
     "import",
     "jest",

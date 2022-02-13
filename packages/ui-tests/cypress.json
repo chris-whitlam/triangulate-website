@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:8888",
+  "downloadsFolder": "./downloads",
+  "fixturesFolder": "./fixtures",
+  "integrationFolder": "./integration",
+  "pluginsFile": "./plugins",
+  "screenshotsFolder": "./screenshots",
+  "supportFile": "./support",
+  "videosFolder": "./videos",
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "videoUploadOnPasses": false
+}

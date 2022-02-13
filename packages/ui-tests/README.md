@@ -1,6 +1,6 @@
 ![alt Triangulate Logo](https://triangulate-game.netlify.app/img/word-logo_1080.fa33f7ae.png)
-# Promotional Website - UI
-This is the UI package for the Triangulate website. It is part of a larger monorepo.
+# Promotional Website - E2E Tests
+This is the E2E test suite for the Triangulate website. It is part of a larger monorepo. You can run this api via the root of the monorepo using `yarn start`. 
 
 ## Prerequisites
   - Node
@@ -8,7 +8,8 @@ This is the UI package for the Triangulate website. It is part of a larger monor
 
 ## Setup
 1. Install dependencies with `yarn install`
-2. Run the site locally with `yarn start`. 
+2. Run the site and functions locally from the monorepo root using `yarn start`. 
+3. Run the tests via `yarn test`
 
 ## Useful Commands
 All commands must be prefixed with `yarn` e.g `yarn install`
@@ -18,5 +19,3 @@ All commands must be prefixed with `yarn` e.g `yarn install`
 | install | Installs all required dependencies |
 | lint | Runs linting checks against all files |
 | test | Runs jest tests against files |
-| start | Runs local instance of UI |
-| build | Builds and bundles files |

@@ -1,5 +1,5 @@
 <template>
-  <div id="hero">
+  <div id="hero" data-testid="hero">
     <div class="triangles-container">
       <Triangle class="triangle2" :rotation="-25" :color="'#0B2059'" />
       <Triangle class="triangle3" :rotation="-10" :color="'#99ADE1'" />
@@ -13,7 +13,7 @@
     </div>
     <div class="content">
       <div class="content-left">
-        <h1>Because circles are pointless</h1>
+        <h1>Because square are pointless</h1>
         <h2>Coming soon to Google Play</h2>
         <Image
           class="google-play-download"
