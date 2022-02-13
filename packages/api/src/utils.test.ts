@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import { badRequest } from "./utils";
 
 describe("Utils", () => {

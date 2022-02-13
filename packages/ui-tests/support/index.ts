@@ -1,4 +1,4 @@
-
+/// <reference types="cypress" />
 import {DEVICE_SIZES} from '../utils'
 
 // Default settings

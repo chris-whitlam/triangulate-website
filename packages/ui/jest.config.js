@@ -19,5 +19,5 @@ module.exports = {
   coverageDirectory: "./coverage",
   coveragePathIgnorePatterns: ["/node_modules/", "<rootDir>/packages/ui"],
   maxWorkers: parseInt(process.env.JEST_MAX_WORKERS) || 2,
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  setupFilesAfterEnv: ["./jest.setup.js"],
 };

@@ -8,7 +8,7 @@ module.exports = {
     "eslint:recommended",
   ],
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 2018,
   },
   plugins: [
     "@typescript-eslint",

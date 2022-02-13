@@ -2,7 +2,7 @@
 module.exports = {
   extends: [
     "plugin:cypress/recommended",
-    "../../.eslintrc.js",
+    "../../.eslintrc.js"
   ],
-  parser: "babel-eslint",
+  "parser": "@typescript-eslint/parser",
 };
