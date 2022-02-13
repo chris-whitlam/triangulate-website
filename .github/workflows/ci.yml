@@ -35,7 +35,7 @@ jobs:
   cypress:
     name: Cypress Tests
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container: cypress/browsers:node16.13.2-chrome97-ff96
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
