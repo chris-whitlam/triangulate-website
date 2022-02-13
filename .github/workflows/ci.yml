@@ -12,29 +12,37 @@ jobs:
     name: Build, Lint & Test
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Setup Node
-      uses: actions/setup-node@v2
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@latest
-    - name: Install dependencies
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: install 
-    - name: Linting
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: lint 
-    - name: Jest Tests
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: test
-    - name: Build
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: build
-    - name: Cypress Tests
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: test:e2e:ci
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install 
+      - name: Linting
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: lint 
+      - name: Jest Tests
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: test
+      - name: Setup Cypress
+        uses: cypress-io/github-action@v2
+  
+  cypress:
+    name: Cypress Tests
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm run start
+          browser: chrome
