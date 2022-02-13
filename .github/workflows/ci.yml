@@ -29,8 +29,6 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: test
-      - name: Setup Cypress
-        uses: cypress-io/github-action@v2
   
   cypress:
     name: Cypress Tests
