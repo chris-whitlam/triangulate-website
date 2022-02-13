@@ -5,7 +5,7 @@ on:
     branches: 
       - master
     paths-ignore:
-      - '**/README.md'
+      - '**.md'
 
 jobs:
   build:
@@ -32,6 +32,7 @@ jobs:
   
   cypress:
     name: Cypress Tests
+    needs: build
     runs-on: ubuntu-latest
     container: 
       image: cypress/browsers:node16.13.2-chrome97-ff96
