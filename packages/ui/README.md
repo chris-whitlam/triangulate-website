@@ -1,6 +1,6 @@
 ![alt Triangulate Logo](https://triangulate-game.netlify.app/img/word-logo_1080.fa33f7ae.png)
 # Promotional Website - UI
-This is the UI package for the Triangulate website.
+This is the UI package for the Triangulate website. It is part of a larger monorepo.
 
 ## Prerequisites
   - Node
@@ -8,7 +8,7 @@ This is the UI package for the Triangulate website.
 
 ## Setup
 1. Install dependencies with `yarn install`
-2. Run the site locally with `yarn start`. Note that this currently doesn't hot reload the webpage but does for the functions. To hot reload ui, run `yarn start:ui`
+2. Run the site locally with `yarn start`. 
 
 ## Useful Commands
 All commands must be prefixed with `yarn` e.g `yarn install`

@@ -1,5 +1,5 @@
 <template>
-  <div id="features">
+  <div id="features" data-testid="features">
     <Feature title="Daily Challenges">
       <div class="feature-description">
         <p>

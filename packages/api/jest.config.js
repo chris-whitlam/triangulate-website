@@ -1,7 +1,7 @@
 module.exports = {
   globals: {
     "ts-jest": {
-      tsconfig: "tsconfig.json",
+      tsconfig: "./tsconfig.json",
       compilerHost: true,
       isolatedModules: true,
     },
@@ -18,4 +18,5 @@ module.exports = {
   coverageDirectory: "./coverage",
   coveragePathIgnorePatterns: ["/node_modules/", "<rootDir>/packages/ui"],
   maxWorkers: parseInt(process.env.JEST_MAX_WORKERS) || 2,
+  setupFilesAfterEnv: ["./jest.setup.js"],
 };

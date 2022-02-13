@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "build",
     "rootDir": "packages",
     "target": "es2016",
@@ -9,13 +10,16 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
+    "noImplicitThis": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "sourceMap": true,
-    "jsx": "react"
+    "sourceMap": true
   },
   "exclude": [
-    "**/node_modules",
+    "node_modules",
+    "dist", 
+    "*.d.ts"
   ],
   "types": [
     "node",
