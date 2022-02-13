@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:8888",
+  "downloadsFolder": "./packages/ui-tests/downloads",
+  "fixturesFolder": "./packages/ui-tests/fixtures",
+  "integrationFolder": "./packages/ui-tests/integration",
+  "pluginsFile": "./packages/ui-tests/plugins",
+  "screenshotsFolder": "./packages/ui-tests/screenshots",
+  "supportFile": "./packages/ui-tests/support",
+  "videosFolder": "./packages/ui-tests/videos",
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "videoUploadOnPasses": false
+}

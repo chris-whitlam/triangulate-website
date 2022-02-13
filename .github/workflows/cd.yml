@@ -34,9 +34,27 @@ jobs:
         with:
           cmd: test
 
+  cypress:
+    name: Cypress Tests
+    needs: build
+    runs-on: ubuntu-latest
+    container: 
+      image: cypress/browsers:node16.13.2-chrome97-ff96
+      options: --user 1001
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm run start
+          browser: chrome
+
   deploy: 
     name: Deploy
-    needs: build
+    needs: cypress
     runs-on: ubuntu-latest
 
     steps:
