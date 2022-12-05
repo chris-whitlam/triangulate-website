@@ -168,7 +168,7 @@
     <h2>Contact</h2>
     <p>
       If you have any questions or suggestions about my Privacy Policy, do not
-      hesitate to <router-link to="/contact">contact me</router-link>.
+      hesitate to contact me.
     </p>
   </div>
 </template>

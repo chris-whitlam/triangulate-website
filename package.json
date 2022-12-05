@@ -10,7 +10,6 @@
   "scripts": {
     "lint": "tsc --noEmit && eslint \"**/*.ts\" --fix & yarn ./packages/ui lint",
     "test": "yarn test:api && yarn test:ui",
-    "test:api": "yarn ./packages/api test",
     "test:ui": "yarn ./packages/ui test",
     "test:e2e": "yarn ./packages/ui-tests test",
     "test:e2e:ci": "yarn ./packages/ui-tests test:ci",

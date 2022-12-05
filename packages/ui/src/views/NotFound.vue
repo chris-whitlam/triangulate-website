@@ -6,7 +6,6 @@
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/faq">FAQ</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
       <li><router-link to="/terms">Terms &amp; Conditions</router-link></li>
       <li><router-link to="/privacy">Privacy Policy</router-link></li>
     </ul>

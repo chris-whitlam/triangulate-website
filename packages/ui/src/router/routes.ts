@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from "vue-router";
-import { Home, FAQ, Contact, Privacy, Terms, NotFound } from "../views/";
+import { Home, FAQ, Privacy, Terms, NotFound } from "../views/";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,11 +11,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/faq",
     name: "FAQ",
     component: FAQ,
-  },
-  {
-    path: "/contact",
-    name: "Contact",
-    component: Contact,
   },
   {
     path: "/privacy",

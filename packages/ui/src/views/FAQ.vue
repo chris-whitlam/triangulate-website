@@ -22,9 +22,8 @@
     <br />
     <p><strong>5. The app isn't working for me. What do I do?</strong></p>
     <p>
-      Sorry to hear that! Feel free to
-      <router-link to="/contact">contact us</router-link> so we can try to fix
-      it as soon as possible with a new release.
+      Sorry to hear that! Feel free to contact us so we can try to fix it as
+      soon as possible with a new release.
     </p>
   </div>
 </template>

@@ -6,14 +6,12 @@
     <nav>
       <router-link class="nav-link" to="/">HOME</router-link>
       <router-link class="nav-link" to="/faq">FAQ</router-link>
-      <router-link class="nav-link" to="/contact">CONTACT</router-link>
     </nav>
     <Button>Get the App</Button>
   </header>
   <div class="sub-nav">
     <router-link class="nav-link" to="/">HOME</router-link>
     <router-link class="nav-link" to="/faq">FAQ</router-link>
-    <router-link class="nav-link" to="/contact">CONTACT</router-link>
   </div>
 </template>
 

@@ -6,11 +6,6 @@ export const Home = defineAsyncComponent({
   loadingComponent: Loading,
 });
 
-export const Contact = defineAsyncComponent({
-  loader: () => import(/* webpackChunkName: "contact" */ "./Contact.vue"),
-  loadingComponent: Loading,
-});
-
 export const NotFound = defineAsyncComponent({
   loader: () => import(/* webpackChunkName: "not-found" */ "./NotFound.vue"),
   loadingComponent: Loading,
